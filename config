@@ -157,10 +157,15 @@ bindsym Mod4+r mode "resize"
 bar {
         status_command i3status
 	position top
-	output primary
 	font pango:Monospace Regular 9
 	separator_symbol "⁞"
 }
+
+#AUDIO
+bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1+ unmute"
+bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 1- unmute"
+bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
+
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
