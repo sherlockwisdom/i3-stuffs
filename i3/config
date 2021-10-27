@@ -204,12 +204,12 @@ bar
 exec xrandr --output HDMI-0 --mode 1920x1080
 
 # Screensaver Settings
-exec --no-startup-id xset dpms 600
+# exec --no-startup-id xset dpms 600
 
-# exec --no-startup-id xautolock -time 30 -locker electricsheep
+# exec --no-startup-id xautolock -time 5 -locker "i3lock -m /home/sherlock/Pictures/505616.png"
 
 # Lock screen
-bindsym $mod+F9 exec i3lock -c 000000 -i /home/mathisen/Images/lock.png
+bindsym $mod+F9 exec i3lock -c 000000 -i /home/sherlock/Pictures/505616.png
 
 # Floating programs
 for_window [class="Pavucontrol"] floating enable
@@ -244,7 +244,6 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Wallpaper settings
 # exec_always feh --bg-scale --randomize $HOME/Pictures/da_1.jpg
-exec_always ~/.fehbg.sh &
 
 # Auto exec settings
 exec chromium
@@ -262,8 +261,12 @@ bindsym $mod+F8 exec xfce4-screenshooter
 exec setxkbmap se
 
 # Set resoultion
-exec xrandr --output VGA-1 --mode 1920x1080
+# exec xrandr --output VGA-1 --mode 1920x1080
+exec_always brightnessctl set 10%
 
 # ======================================================
 
 # exec xrdb ~/.Xresources
+exec_always --no-startup-id $HOME/.fehbg
+exec_always --no-startup-id $HOME/.screenlayout/setup.sh
+exec_always --no-startup-id nitrogen --restore
