@@ -202,7 +202,7 @@ bar {
 	position top
 	status_command /usr/bin/bumblebee-status \
 	-m progress todo publicip traffic nic kernel uptime amixer \
-	-p nic.states=^down \
+	-p nic.states=^down nic.right-click="terminator -e 'nmtui'" \
 	-t nord-powerline
 }
 
@@ -273,7 +273,7 @@ bindsym $mod+F8 exec xfce4-screenshooter
 # ======================================================
 
 # Set Swedish keyboard 
-exec setxkbmap se
+exec setxkbmap en
 
 # Set resoultion
 # exec xrandr --output VGA-1 --mode 1920x1080
@@ -285,3 +285,4 @@ exec_always brightnessctl set 10%
 exec_always --no-startup-id $HOME/.fehbg
 exec_always --no-startup-id $HOME/.screenlayout/setup.sh
 exec_always --no-startup-id nitrogen --restore
+exec --no-startup-id /usr/lib/gsd-xsettings
