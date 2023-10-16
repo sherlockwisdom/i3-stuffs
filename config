@@ -216,7 +216,7 @@ bar {
 	position bottom
 	status_command /usr/bin/bumblebee-status \
 	-m xkcd memory cpu brightness datetime battery \
-	-p  battery.showpowerconsumption=true brightness.use_acpi=true \
+	-p  battery.showpowerconsumption=true \
 		cpu.right-click="terminator -e htop" \
 	-t greyish-powerline 
 }
@@ -283,7 +283,7 @@ exec setxkbmap en
 
 # Set resoultion
 # exec xrandr --output VGA-1 --mode 1920x1080
-exec_always brightnessctl set 10%
+exec_always brightnessctl set 40%
 
 # ======================================================
 
@@ -292,3 +292,5 @@ exec_always --no-startup-id $HOME/.fehbg
 exec_always --no-startup-id $HOME/.screenlayout/setup.sh
 exec_always --no-startup-id nitrogen --restore
 exec --no-startup-id /usr/lib/gsd-xsettings
+
+exec_always --no-startup-id autorandr --change
