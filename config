@@ -12,9 +12,9 @@
 
 #Needed for i3-gaps
 #hide_edge_borders both
-for_window [class="^.*"] border pixel 2 
-gaps inner 15 
-gaps outer 15
+for_window [class="^.*"] border pixel 0 
+gaps inner 3 
+gaps outer 1
 
 bindsym $mod+z		gaps outer current plus 5
 bindsym $mod+Shift+z	gaps outer current minus 5
@@ -129,6 +129,11 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
+bindsym $mod+Ctrl+l move workspace to output right
+bindsym $mod+Ctrl+h move workspace to output left
+bindsym $mod+Ctrl+k move workspace to output up
+bindsym $mod+Ctrl+j move workspace to output down
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -202,7 +207,7 @@ bar {
 	position top
 	status_command /usr/bin/bumblebee-status \
 	-m progress todo publicip traffic nic kernel uptime amixer \
-	-p nic.states=^down nic.right-click="terminator -e 'nmtui'" \
+	-p nic.states=^down nic.right-click="terminator -e 'nmtui'" amixer.right-click="terminator -e 'alsamixer'" \
 	-t nord-powerline
 }
 
@@ -212,6 +217,7 @@ bar {
 	status_command /usr/bin/bumblebee-status \
 	-m xkcd memory cpu brightness datetime battery \
 	-p  battery.showpowerconsumption=true brightness.use_acpi=true \
+		cpu.right-click="terminator -e htop" \
 	-t greyish-powerline 
 }
 
