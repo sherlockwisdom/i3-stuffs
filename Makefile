@@ -1,2 +1,7 @@
 all:
-	sudo pacman -S ranger rofi feh
+	sudo pacman -S \
+		ranger \
+		rofi \
+		feh \
+		brightnessctl \
+		autorandr
