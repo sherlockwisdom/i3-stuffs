@@ -287,10 +287,11 @@ exec_always brightnessctl set 40%
 
 # ======================================================
 
+exec_always --no-startup-id autorandr --change
+
 # exec xrdb ~/.Xresources
 exec_always --no-startup-id $HOME/.fehbg
 exec_always --no-startup-id $HOME/.screenlayout/setup.sh
 exec_always --no-startup-id nitrogen --restore
 exec --no-startup-id /usr/lib/gsd-xsettings
 
-exec_always --no-startup-id autorandr --change
